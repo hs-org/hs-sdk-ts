@@ -4,7 +4,9 @@
   "description": "HappyShop SDK for JavaScript in the browser and Node.js",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["/dist"],
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +16,16 @@
     "type": "git",
     "url": "https://github.com/HappyMC/hs-sdk-ts"
   },
-  "keywords": ["sdk", "happyshop", "typescript", "ts", "hs"],
+  "keywords": [
+    "sdk",
+    "happyshop",
+    "typescript",
+    "ts",
+    "hs"
+  ],
   "author": "Natan Vieira <itroken99@gmail.com>",
-  "license": "SEE LICENSE IN LICENSE.md"
+  "license": "SEE LICENSE IN LICENSE.md",
+  "dependencies": {
+    "@types/node": "^12.12.5"
+  }
 }

@@ -7,12 +7,26 @@ To install the this package using NPM, simply type the following into a terminal
 npm install hs-sdk-ts
 ```
 
-## Usage
+## Usage & Configuration
 The HappyShop SDK bundles TypeScript definition files for use in TypeScript projects and to support tools that can read `.d.ts` files.
 To use the TypeScript definition files within a Node.js project, simply import as you normally would.
 ```typescript
 import HappyShop from 'hs-sdk-ts'
 ```
+
+To communicate with the server, some credentials must be set correctly.\
+You need a `config.json` file with the following settings:
+```json
+{
+  "credentials": {
+    "key": "<your-api-key>",
+    "secret": "<your-api-secret>"
+  }
+}
+```
+
+Your credentials are not validated at startup, only when a request is made to the server.
+Your `key` and` secret` can be found through your developer settings on the HappyShop website.
 
 ## Getting Help
 Please use these community resources for getting help. We use the GitHub issues for tracking bugs and feature requests and have limited bandwidth to address them.
