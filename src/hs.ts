@@ -1,27 +1,31 @@
-class HappyShop {
-
-    endpoint: string = "https://api.happyshop.net";
-    config: any = {};
+export type HappyShop = {
+    endpoint: string,
+    credentials: {
+        key: string,
+        secret: string
+    }
 }
 
-const hs = new HappyShop();
+let config: any = {};
 const path = require('path');
 const fs = require("fs");
 
 function validateCredentials() {
-    const config = JSON.parse(fs.readFileSync(path.resolve("config.json")).toString("utf8"));
-    if (!config.credentials)
-        throw Error("Credentials not found in configuration file.");
+    const conf = JSON.parse(fs.readFileSync(path.resolve("hsconfig.json")).toString("utf8"));
+    if (!conf.credentials)
+        throw Error("Credentials not found in configuration file (hsconfig.json).");
 
-    const cred = config.credentials;
+    const cred = conf.credentials;
     if (!cred.key)
         throw Error("Missing \"key\" credential.");
 
     if (!cred.secret)
         throw Error("Missing \"secret\" credential.");
 
-    hs.config = config;
+    config = conf;
+    if (!config.endpoint)
+        config.endpoint = "https://api.happyshop.net";
 }
 
 validateCredentials();
-export default HappyShop;
+export default config;
