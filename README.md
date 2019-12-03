@@ -15,9 +15,10 @@ import HappyShop from 'hs-sdk-ts'
 ```
 
 To communicate with the server, some credentials must be set correctly.\
-You need a `config.json` file with the following settings:
+You need a `hsconfig.json` file with the following settings:
 ```json
 {
+  "endpoint": "https://api.happyshop.net",
   "credentials": {
     "key": "<your-api-key>",
     "secret": "<your-api-secret>"
