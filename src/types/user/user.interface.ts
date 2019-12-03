@@ -1,4 +1,6 @@
-export interface User {
+import {HSUserVisibility} from "./user-visibility.enum";
+
+export interface HSUser {
 
     /**
      * Unique user ID.
@@ -20,25 +22,6 @@ export interface User {
     /**
      * Visibility level of the user personal data.
      */
-    visibility: UserVisibility
-
-}
-
-export enum UserVisibility {
-
-    /**
-     * Everyone can see user personal data.
-     */
-    PUBLIC,
-
-    /**
-     * Only buyers can see user personal data.
-     */
-    BUYERS_ONLY,
-
-    /**
-     * No one can see the user personal data, only the user himself.
-     */
-    PRIVATE
+    visibility: HSUserVisibility
 
 }

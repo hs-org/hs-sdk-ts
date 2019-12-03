@@ -28,4 +28,4 @@ function validateCredentials() {
 }
 
 validateCredentials();
-export default config;
+export default <HappyShop> config;

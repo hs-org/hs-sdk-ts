@@ -1,9 +1,13 @@
-import HappyShop from "./hs";
-export { Shop } from "./shop";
+import HappyShopConfig from "./hs"
+export { HappyShop } from "./hs"
 
 export {
-    User,
-    UserVisibility
-} from "./user"
+    HSPaymentMethod
+} from "./types/payment"
 
-export default HappyShop;
+export {
+    HSUser,
+    HSUserVisibility
+} from "./types/user"
+
+export default HappyShopConfig;
