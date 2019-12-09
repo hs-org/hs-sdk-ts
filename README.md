@@ -4,7 +4,7 @@ The official HappyShop SDK for JavaScript, available for browsers and mobile dev
 ## Installing
 To install the this package using NPM, simply type the following into a terminal window:
 ```
-npm install hs-sdk-ts
+npm install @hs-org/hs-sdk-ts
 ```
 
 ## Usage & Configuration
@@ -18,9 +18,9 @@ To communicate with the server, some credentials must be set correctly.\
 You need a `hsconfig.json` file with the following settings:
 ```json
 {
-  "endpoint": "https://api.happyshop.net",
+  "endpoint": "<happyshop-api-endpoint>",
   "credentials": {
-    "key": "<your-api-key>",
+    "key": "<your-api-access-key>",
     "secret": "<your-api-secret>"
   }
 }
