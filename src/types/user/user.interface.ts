@@ -1,5 +1,3 @@
-import {HSUserVisibility} from "./user-visibility.enum";
-
 export interface HSUser {
 
     /**
@@ -8,20 +6,19 @@ export interface HSUser {
     readonly id: string
 
     /**
-     * Full name of the user.
+     * First name of the user.
      */
-    readonly name: string
+    readonly firstName: string
+
+    /**
+     * First name of the user.
+     */
+    readonly lastName: string
 
     /**
      * Email of the user.
-     * May be null if user email visibility is set to {@link BUYERS_ONLY} or {@link PRIVATE}
-     * @see visibility
+     * May be null if user email visibility is set to `BUYERS_ONLY` or `PRIVATE`
      */
     readonly email?: string
-
-    /**
-     * Visibility level of the user personal data.
-     */
-    visibility: HSUserVisibility
 
 }
