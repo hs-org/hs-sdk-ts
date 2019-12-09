@@ -11,7 +11,12 @@ const path = require('path');
 const fs = require("fs");
 
 function validateCredentials() {
-    const conf = JSON.parse(fs.readFileSync(path.resolve("hsconfig.json")).toString("utf8"));
+    const cpath = path.resolve("hsconfig.json");
+    if (!fs.existsSync(cpath)) {
+        throw Error("Configuration file (hsconfig.json) not found.")
+    }
+
+    const conf = JSON.parse(fs.readFileSync(cpath)).toString("utf8");
     if (!conf.credentials)
         throw Error("Credentials not found in configuration file (hsconfig.json).");
 
@@ -22,9 +27,10 @@ function validateCredentials() {
     if (!cred.secret)
         throw Error("Missing \"secret\" credential.");
 
+    if (!conf.endpoint)
+        throw Error("Missing \"endpoint\" key.");
+
     config = conf;
-    if (!config.endpoint)
-        config.endpoint = "https://api.happyshop.net";
 }
 
 validateCredentials();
