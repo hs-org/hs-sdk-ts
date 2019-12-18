@@ -24,10 +24,16 @@ export interface HSStore {
     readonly owner: HSUser
 
     /**
-     * Logo image hash.
+     * Logo image URL.
      * May return null if the store does not have a logo defined.
      */
     logo?: string
+
+    /**
+     * Logo banner URL.
+     * May return null if the store does not have a banner defined.
+     */
+    banner?: string
 
     /**
      * Date the store was created.
