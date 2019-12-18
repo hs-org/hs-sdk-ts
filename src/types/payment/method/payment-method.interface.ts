@@ -10,6 +10,7 @@ export interface HSPaymentMethod {
     /**
      * Current status of the payment method, in this case, its availability.
      * See {@link HSPaymentMethodStatus} for detailed status specification information.
+     * @default available
      * @see HSPaymentMethodStatus
      */
     status: HSPaymentMethodStatus

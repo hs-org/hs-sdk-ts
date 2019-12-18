@@ -1,37 +1,38 @@
-export type HappyShop = {
-    endpoint: string,
-    credentials: {
-        key: string,
-        secret: string
+import Axios, {AxiosError, AxiosInstance} from "axios";
+import {HSConfig} from "./config";
+
+export class HappyShop {
+
+    private readonly http!: AxiosInstance;
+    private errorHandler: HSErrorHandler;
+
+    constructor(private readonly config: HSConfig) {
+        let conf = config.getConfig();
+        this.http = Axios.create({
+            baseURL: conf.endpoint,
+            withCredentials: true,
+            headers: {
+                "X-Api-AccessKey": conf.credentials.accessKey,
+                "X-Api-Secret": conf.credentials.secret
+            }
+        });
+        this.errorHandler = (err: AxiosError) => {
+            console.error("[HS] Error", err);
+        }
     }
+
+    /**
+     * Sets the default error handler for all requests.
+     * By default, an error handler is already defined with the function of only logging errors.
+     * @param errorHandler
+     */
+    public setErrorHandler(errorHandler: HSErrorHandler): void {
+        this.errorHandler = errorHandler;
+    }
+
 }
 
-let config: any = {};
-const path = require('path');
-const fs = require("fs");
-
-function validateCredentials() {
-    const cpath = path.resolve("hsconfig.json");
-    if (!fs.existsSync(cpath)) {
-        throw Error("Configuration file (hsconfig.json) not found.")
-    }
-
-    const conf = JSON.parse(fs.readFileSync(cpath)).toString("utf8");
-    if (!conf.credentials)
-        throw Error("Credentials not found in configuration file (hsconfig.json).");
-
-    const cred = conf.credentials;
-    if (!cred.key)
-        throw Error("Missing \"key\" credential.");
-
-    if (!cred.secret)
-        throw Error("Missing \"secret\" credential.");
-
-    if (!conf.endpoint)
-        throw Error("Missing \"endpoint\" key.");
-
-    config = conf;
-}
-
-validateCredentials();
-export default <HappyShop> config;
+/**
+ * A type to shorten the error handler.
+ */
+export type HSErrorHandler = (err: AxiosError) => void

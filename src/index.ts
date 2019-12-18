@@ -1,13 +1,10 @@
-import HappyShopConfig from "./hs"
-export { HappyShop } from "./hs"
+import { HappyShop } from "./hs";
 
-export {
-    HSPaymentMethod
-} from "./types/payment"
+export * from "./types/payment"
+export * from "./types/user"
+export * from "./types/game"
+export * from "./types/theme"
+export * from "./types/store"
+export * from "./config";
 
-export {
-    HSUser,
-    HSUserVisibility
-} from "./types/user"
-
-export default HappyShopConfig;
+export default HappyShop;
