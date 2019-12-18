@@ -1,7 +1,7 @@
 export interface HSUser {
 
     /**
-     * Unique user ID.
+     * User unique ID.
      */
     readonly id: string
 
@@ -11,14 +11,8 @@ export interface HSUser {
     readonly firstName: string
 
     /**
-     * First name of the user.
+     * Last name of the user.
      */
     readonly lastName: string
-
-    /**
-     * Email of the user.
-     * May be null if user email visibility is set to `BUYERS_ONLY` or `PRIVATE`
-     */
-    readonly email?: string
 
 }
