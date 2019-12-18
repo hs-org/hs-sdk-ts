@@ -1,7 +1,7 @@
 {
   "endpoint": "https://api.happyshop.net",
   "credentials": {
-    "key": "<your-api-access-key>",
-    "secret": "<your-api-secret-key>"
+    "access-key": "<your-api-access-key>",
+    "secret": "<your-api-secret>"
   }
 }
