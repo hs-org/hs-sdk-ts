@@ -21,15 +21,16 @@ export interface HSTheme {
      * it is possible to pass a {@link HSThemeAuthor#url} to the author page, Github profile or anything else that can be recognized.
      * @see HSThemeAuthor
      */
-    author: HSThemeAuthor | string;
+    author: HSThemeAuthor;
 
     /**
      * URL to the repository or official page of the theme.
      */
-    url?: string;
+    url: string;
 
     /**
-     * Theme Category. All available categories can be seen in the documentation.
+     * Theme Category.
+     * All available categories can be seen in the documentation.
      */
     category?: string;
 }
