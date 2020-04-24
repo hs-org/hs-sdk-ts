@@ -1,1 +1,2 @@
-export {HSTheme, HSThemeAuthor} from "./theme.interface";
+export {HSTheme} from "./theme";
+export {HSThemeAuthor} from "./theme-author";
