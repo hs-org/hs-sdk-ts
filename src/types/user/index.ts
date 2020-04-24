@@ -1,1 +1,1 @@
-export {HSUser} from "./user.interface"
+export {HSUser} from "./user"

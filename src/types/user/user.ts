@@ -15,4 +15,15 @@ export interface HSUser {
      */
     readonly lastName: string
 
+    /**
+     * User email address. Their availability is directly
+     * affected by their level of {@link visibility}.
+     */
+    readonly email?: string
+
+    /**
+     * User account visibility level.
+     */
+    readonly visibility: number
+
 }
