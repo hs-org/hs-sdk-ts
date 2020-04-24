@@ -1,3 +1,3 @@
-export {HSStore} from "./store.interface";
-export {HSStoreProduct} from "./store-product.interface";
+export {HSStore} from "./store";
+export {HSStoreProduct} from "./store-product";
 export {DummyStore} from "./dummy-store";
