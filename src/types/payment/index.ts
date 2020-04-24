@@ -1,3 +1,1 @@
-export {
-    HSPaymentMethod
-} from "./method/payment-method.interface";
+export {HSPaymentMethod} from "./method/payment-method";
