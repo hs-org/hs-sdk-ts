@@ -2,6 +2,7 @@
   "name": "@hs-org/hs-sdk-ts",
   "version": "0.0.1",
   "description": "HappyShop SDK for JavaScript in the browser and Node.js",
+  "private": false,
   "keywords": [
     "sdk",
     "happyshop",
